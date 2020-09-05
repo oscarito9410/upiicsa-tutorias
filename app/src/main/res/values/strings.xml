@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Upicca-tutorias</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_login_tittle">BIENVENIDO</string>
+    <string name="text_login_new_registry">Registrar nuevo usuario</string>
+    <string name="text_login_btn">Iniciar sesión</string>
+    <string name="text_registry_full_name">Nombre completo del alumno</string>
+    <string name="text__registry_id_student">Boleta</string>
+    <string name="text__registry_semester">Semestre</string>
+    <string name="text_registry_academic_program">Programa academico</string>
+    <string name="text_registry_init_average">Promedio al incio del \nperiodo (semestre)</string>
+    <string name="text_registry_mail">Correo electrónico</string>
+    <string name="text_registry_phone">Telefono</string>
+    <string name="text_registry_turn">Turno</string>
+    <string name="text_registry_academic_student">Alumno</string>
+    <string name="text_registry_matters_owed">Materias que adeuda</string>
 </resources>

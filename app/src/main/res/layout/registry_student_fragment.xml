@@ -1,14 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistryStudentFragment">
+    tools:context=".ui.student_registry.RegistryStudentFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cly_container_registry_step_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_registry_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/text_registry_full_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_registry_full_name"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_full_name" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_id_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text__registry_id_student"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_full_name" />
+
+        <EditText
+            android:id="@+id/et_registry_id_student"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_id_student" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text__registry_semester"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_id_student" />
+
+        <EditText
+            android:id="@+id/et_registry_semester"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_semester" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_academic_program"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_academic_program"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_semester"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_semester" />
+
+        <Spinner
+            android:id="@+id/sp_registry_academic_program"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_academic_program" />
+
+        <TextView
+            android:id="@+id/tv_registry_init_average"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_init_average"
+            app:layout_constraintStart_toStartOf="@+id/sp_registry_academic_program"
+            app:layout_constraintTop_toBottomOf="@+id/sp_registry_academic_program" />
+
+
+        <EditText
+            android:id="@+id/et_registry_init_average"
+            style="@style/etRegistryTheme"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_registry_init_average"
+            app:layout_constraintEnd_toEndOf="@+id/sp_registry_academic_program"
+            app:layout_constraintTop_toTopOf="@+id/tv_registry_init_average" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cly_container_registry_step_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <TextView
+            android:id="@+id/tv_registry_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/text_registry_mail"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_mail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_registry_mail"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_mail" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_phone"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_mail"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_mail" />
+
+        <EditText
+            android:id="@+id/et_registry_phone"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_phone" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_turn"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_phone"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_phone" />
+
+        <EditText
+            android:id="@+id/et_registry_turn"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_turn" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_academic_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_academic_student"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_turn"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_turn" />
+
+        <Spinner
+            android:id="@+id/sp_registry_academic_student"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_academic_student" />
+
+        <TextView
+            android:id="@+id/tv_registry_scholarship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Becado"
+            app:layout_constraintStart_toStartOf="@+id/sp_registry_academic_student"
+            app:layout_constraintTop_toBottomOf="@+id/sp_registry_academic_student" />
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_registry_scholarship"
+            app:layout_constraintEnd_toEndOf="@+id/sp_registry_academic_student"
+            app:layout_constraintTop_toTopOf="@+id/tv_registry_scholarship">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Si" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="No" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/tv_registry_matters_owed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_matters_owed"
+            app:layout_constraintStart_toStartOf="@+id/tv_registry_scholarship"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_scholarship" />
+
+        <EditText
+            android:id="@+id/et_registry_matters_owed"
+            style="@style/etRegistryTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <TextView
+        android:id="@+id/tv_registry_footer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="60dp"
+        android:background="@color/colorGrayFooter"
+        android:gravity="center"
+        android:text="1/2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/iv_registry_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:src="@drawable/ic_arrow_next"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_registry_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_registry_footer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
