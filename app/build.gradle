@@ -48,6 +48,11 @@ dependencies {
     implementation dependencies.navigationFragment
     implementation dependencies.navigationUi
 
+    implementation dependencies.glide
+    annotationProcessor dependencies.glideAnnotation
+
+    implementation dependencies.koin
+    implementation dependencies.koinViewModel
 
 
 }

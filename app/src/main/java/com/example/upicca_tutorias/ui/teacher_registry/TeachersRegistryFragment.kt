@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.example.upicca_tutorias.R
+import com.example.upicca_tutorias.base.BaseFragment
+import com.example.upicca_tutorias.ui.teacher_registry.adapter.TeacherRegistryAdapter
 
-class TeachersRegistryFragment : Fragment() {
+class TeachersRegistryFragment : BaseFragment() {
+
 
     companion object {
         fun newInstance() =
@@ -17,17 +21,37 @@ class TeachersRegistryFragment : Fragment() {
 
     private lateinit var viewModel: TeachersRegistryViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.teachers_registry_fragment, container, false)
+
+    override fun getLayoutView(): Int = R.layout.teachers_registry_fragment
+
+
+    override fun initView() {
     }
+
+    override fun attachObservers() {
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        attachObservers()
         viewModel = ViewModelProviders.of(this).get(TeachersRegistryViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.apply {
+            fetchTeachersRegistries()
+            teacherRegistries.observe(viewLifecycleOwner, Observer {
+                teachersAdapter.addNewTeachers(it)
+            })
+        }
+
+    }
+
+
+
 
 }
