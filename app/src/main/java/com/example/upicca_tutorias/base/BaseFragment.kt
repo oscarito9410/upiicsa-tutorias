@@ -1,12 +1,11 @@
 package com.example.upicca_tutorias.base
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.upicca_tutorias.ui.teacher_registry.adapter.TeacherRegistryAdapter
 
 abstract class BaseFragment : Fragment() {
@@ -15,16 +14,9 @@ abstract class BaseFragment : Fragment() {
     abstract fun initView()
     abstract fun attachObservers()
 
-    //Protected fields will be shared in each fragment
-    //Verify if the screen orientation is landscape or portrait
-    private val isLandScape by lazy {
-        context?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE
-    }
     protected val teachersAdapter = TeacherRegistryAdapter(mutableListOf())
     protected val teachersLayoutManager by lazy {
-        StaggeredGridLayoutManager(
-            getColumnsByOrientation(isLandScape),
-                StaggeredGridLayoutManager.VERTICAL)
+        LinearLayoutManager(context)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,15 +28,5 @@ abstract class BaseFragment : Fragment() {
         initView()
     }
 
-    /**
-     * Method to get recyclerview's columns according to the current orientation
-     */
-    protected fun getColumnsByOrientation(isLandScape: Boolean) = if (isLandScape) RECYCLER_VIEW_SPAN_COUNT_LANDSCAPE
-    else RECYCLER_VIEW_SPAN_COUNT_PORTRAIT
 
-    companion object {
-        const val RECYCLER_VIEW_SPAN_COUNT_PORTRAIT = 2
-        const val RECYCLER_VIEW_SPAN_COUNT_LANDSCAPE = 3
-        const val SPACE_ITEM_DECORATION = 12
-    }
 }

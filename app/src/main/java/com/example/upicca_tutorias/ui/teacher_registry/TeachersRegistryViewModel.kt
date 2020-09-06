@@ -17,7 +17,6 @@ class TeachersRegistryViewModel : ViewModel() {
 
     fun fetchTeachersRegistries() {
         //temporal Code
-
        var list: List<TeacherRegistry> = listOf(TeacherRegistry("Juan Domm","Programacion",""),
            TeacherRegistry("Daniel Mattrs","Matematicas avanzadas",""),
            TeacherRegistry("Luis Daniel Martinez","Filosfia y letras",""))

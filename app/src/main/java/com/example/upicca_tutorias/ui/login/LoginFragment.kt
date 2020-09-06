@@ -2,6 +2,8 @@ package com.example.upicca_tutorias.ui.login
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,16 +33,13 @@ class LoginFragment : BaseFragment() {
     }
 
     override fun attachObservers() {
-        viewModel.apply {  }
+        viewModel.apply { }
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         attachObservers()
-
-       // viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,9 +55,33 @@ class LoginFragment : BaseFragment() {
             mNavController.navigate(R.id.teachersRegistryFragment)
         }
 
+        et_login_username.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, count: Int) {
+                btn_login_init.isEnabled = count > 10 && et_login_pass.length() > 10
+            }
+        })
+
+
+        et_login_pass.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, count: Int) {
+                btn_login_init.isEnabled = count > 10 && et_login_username.length() > 10
+            }
+        })
+
+
     }
-
-
 
 
 }

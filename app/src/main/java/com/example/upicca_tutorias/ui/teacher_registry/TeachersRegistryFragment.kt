@@ -9,7 +9,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.base.BaseFragment
+import com.example.upicca_tutorias.ui.login.LoginViewModel
 import com.example.upicca_tutorias.ui.teacher_registry.adapter.TeacherRegistryAdapter
+import kotlinx.android.synthetic.main.teachers_registry_fragment.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class TeachersRegistryFragment : BaseFragment() {
 
@@ -19,29 +22,18 @@ class TeachersRegistryFragment : BaseFragment() {
             TeachersRegistryFragment()
     }
 
-    private lateinit var viewModel: TeachersRegistryViewModel
+    private val viewModel: TeachersRegistryViewModel by viewModel()
+
 
 
     override fun getLayoutView(): Int = R.layout.teachers_registry_fragment
 
 
     override fun initView() {
+        initAdapterManager()
     }
 
     override fun attachObservers() {
-    }
-
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        attachObservers()
-        viewModel = ViewModelProviders.of(this).get(TeachersRegistryViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         viewModel.apply {
             fetchTeachersRegistries()
             teacherRegistries.observe(viewLifecycleOwner, Observer {
@@ -49,7 +41,36 @@ class TeachersRegistryFragment : BaseFragment() {
             })
         }
 
+
     }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        attachObservers()
+    }
+
+
+    private fun initAdapterManager() {
+        rv_teachers_registry?.apply {
+            layoutManager = teachersLayoutManager
+            //addItemDecoration(SpacesItemDecoration(SPACE_ITEM_DECORATION))
+            adapter = teachersAdapter
+            handleItemClickListener()
+        }
+    }
+
+    private fun handleItemClickListener() {
+        teachersAdapter.apply {
+            setItemClickListener { movie ->
+                movie.run {
+                    notifyDataSetChanged()
+
+                }
+            }
+        }
+    }
+
 
 
 
