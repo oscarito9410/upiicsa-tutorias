@@ -23,5 +23,13 @@
         <action
             android:id="@+id/action_registryStudentFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registryStudentFragment_to_teachersRegistryFragment"
+            app:destination="@id/teachersRegistryFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/teachersRegistryFragment"
+        android:name="com.example.upicca_tutorias.ui.teacher_registry.TeachersRegistryFragment"
+        android:label="teachers_registry_fragment"
+        tools:layout="@layout/teachers_registry_fragment" />
 </navigation>

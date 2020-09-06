@@ -197,12 +197,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Becado"
+            android:text="@string/text_registry_scholarship"
             app:layout_constraintStart_toStartOf="@+id/sp_registry_academic_student"
             app:layout_constraintTop_toBottomOf="@+id/sp_registry_academic_student" />
 
 
         <RadioGroup
+            android:id="@+id/rg_registry_student_scholarship"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -211,16 +212,18 @@
             app:layout_constraintTop_toTopOf="@+id/tv_registry_scholarship">
 
             <RadioButton
+                android:id="@+id/rb_registry_student_scholarship_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Si" />
+                android:text="@string/text_registry_student_scholarship_yes" />
 
             <RadioButton
+                android:id="@+id/rb_registry_student_scholarship_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="No" />
+                android:text="@string/text_registry_student_scholarship_no" />
 
         </RadioGroup>
 
