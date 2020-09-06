@@ -15,4 +15,5 @@
     <string name="text_registry_turn">Turno</string>
     <string name="text_registry_academic_student">Alumno</string>
     <string name="text_registry_matters_owed">Materias que adeuda</string>
+    <string name="text_registry_footer">%s/2</string>
 </resources>
