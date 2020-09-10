@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui.signup
+package com.example.upicca_tutorias.ui.signin.signup
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

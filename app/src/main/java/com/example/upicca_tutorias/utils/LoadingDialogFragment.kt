@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui
+package com.example.upicca_tutorias.utils
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

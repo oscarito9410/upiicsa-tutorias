@@ -1,18 +1,15 @@
 package com.example.upicca_tutorias.di
 
-import com.aboolean.movies.core.DispatcherProvider
-import com.aboolean.movies.core.DispatcherProviderImpl
 import com.example.upicca_tutorias.data.remote.UserEndpoints
 import com.example.upicca_tutorias.domain.usecase.LoginUseCase
 import com.example.upicca_tutorias.domain.usecase.LoginUseCaseImpl
-import com.example.upicca_tutorias.ui.login.LoginViewModel
-import com.example.upicca_tutorias.ui.signup.RegistryStudentViewModel
+import com.example.upicca_tutorias.ui.signin.login.LoginViewModel
+import com.example.upicca_tutorias.ui.signin.signup.RegistryStudentViewModel
 import com.example.upicca_tutorias.ui.home.TeachersRegistryViewModel
 import com.example.upicca_tutorias.utils.Constants
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

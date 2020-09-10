@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_repeat"
-    tools:context=".ui.signup.RegistryStudentFragment">
-
+    tools:context=".ui.signin.signup.RegistryStudentFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_container_registry_step_1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="visible"
+        tools:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +30,7 @@
         <EditText
             android:id="@+id/et_registry_full_name"
             style="@style/etRegistryTheme"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_full_name" />
@@ -47,6 +48,8 @@
         <EditText
             android:id="@+id/et_registry_id_student"
             style="@style/etRegistryTheme"
+            android:inputType="numberSigned"
+            android:maxLength="10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_id_student" />
@@ -64,6 +67,8 @@
         <EditText
             android:id="@+id/et_registry_semester"
             style="@style/etRegistryTheme"
+            android:inputType="numberSigned"
+            android:maxLength="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_semester" />
@@ -84,6 +89,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
+            android:entries="@array/careers"
             android:background="@drawable/selector_spinner_registry"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +110,8 @@
             style="@style/etRegistryTheme"
             android:layout_width="70dp"
             android:layout_height="50dp"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
             app:layout_constraintBottom_toBottomOf="@+id/tv_registry_init_average"
             app:layout_constraintEnd_toEndOf="@+id/sp_registry_academic_program"
             app:layout_constraintTop_toTopOf="@+id/tv_registry_init_average" />
@@ -117,12 +125,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
 
         <TextView
             android:id="@+id/tv_registry_mail"
@@ -136,6 +143,7 @@
         <EditText
             android:id="@+id/et_registry_mail"
             style="@style/etRegistryTheme"
+            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_mail" />
@@ -153,6 +161,7 @@
         <EditText
             android:id="@+id/et_registry_phone"
             style="@style/etRegistryTheme"
+            android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_phone" />
@@ -167,9 +176,10 @@
             app:layout_constraintStart_toStartOf="@+id/et_registry_phone"
             app:layout_constraintTop_toBottomOf="@+id/et_registry_phone" />
 
-        <EditText
+        <Spinner
             android:id="@+id/et_registry_turn"
             style="@style/etRegistryTheme"
+            android:entries="@array/turns"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_turn" />
@@ -190,6 +200,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
+            android:entries="@array/academic_situtation"
             android:background="@drawable/selector_spinner_registry"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -243,6 +254,8 @@
         <EditText
             android:id="@+id/et_registry_matters_owed"
             style="@style/etRegistryTheme"
+            android:inputType="numberSigned"
+            android:maxLength="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed" />
@@ -250,8 +263,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
     <TextView
         android:id="@+id/tv_registry_footer"
@@ -267,7 +278,7 @@
 
     <ImageView
         android:id="@+id/iv_registry_footer"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:paddingStart="30dp"

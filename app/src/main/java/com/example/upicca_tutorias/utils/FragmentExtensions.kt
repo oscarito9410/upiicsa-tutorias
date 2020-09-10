@@ -6,7 +6,6 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.example.upicca_tutorias.ui.LoadingDialogFragment
 
 
 /**
@@ -45,7 +44,8 @@ fun Fragment.showDialogFragmentOnce(dialogFragment: DialogFragment) {
 }
 
 fun FragmentActivity.showLoadingSpinner() {
-    val loadingDialogFragment = LoadingDialogFragment()
+    val loadingDialogFragment =
+        LoadingDialogFragment()
     supportFragmentManager.beginTransaction().add(
         loadingDialogFragment,
         LoadingDialogFragment::class.java.name

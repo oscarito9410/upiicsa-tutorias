@@ -1,19 +1,14 @@
-package com.example.upicca_tutorias.ui.login
+package com.example.upicca_tutorias.ui.signin.login
 
-import androidx.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.base.BaseFragment
+import com.example.upicca_tutorias.ui.home.HomeActivity
 import com.example.upicca_tutorias.ui.model.LoginViewState
 import com.example.upicca_tutorias.utils.hideLoadingSpinner
 import com.example.upicca_tutorias.utils.showLoadingSpinner
@@ -42,7 +37,8 @@ class LoginFragment : BaseFragment() {
         }
 
         btn_login_init.setOnClickListener {
-            viewModel.signIn(et_login_username.text.toString(), et_login_pass.text.toString())
+            viewModel.signIn(etLoginUserName.text.toString(),
+                etLoginPass.text.toString())
         }
     }
 
@@ -65,7 +61,7 @@ class LoginFragment : BaseFragment() {
             }
             is LoginViewState.OnSuccessSignIn -> {
                 requireActivity().hideLoadingSpinner()
-                requireContext().toast("on success")
+                startActivity(Intent(requireContext(), HomeActivity::class.java))
             }
         }
     }
