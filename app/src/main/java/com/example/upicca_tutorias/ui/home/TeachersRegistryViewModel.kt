@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui.teacher_registry
+package com.example.upicca_tutorias.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

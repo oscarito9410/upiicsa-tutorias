@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui.teacher_registry.adapter
+package com.example.upicca_tutorias.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +30,6 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
     fun setItemClickListener(listener: (TeacherRegistry) -> Unit) {
         this.itemClickListener = listener
     }
-
 
     fun addNewTeachers(newMovies: List<TeacherRegistry>) {
         teacherRegistries.addAll(newMovies)

@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/registryStudentFragment"
-        android:name="com.example.upicca_tutorias.ui.student_registry.RegistryStudentFragment"
+        android:name="com.example.upicca_tutorias.ui.signup.RegistryStudentFragment"
         android:label="registry_student_fragment"
         tools:layout="@layout/registry_student_fragment" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/teachersRegistryFragment"
-        android:name="com.example.upicca_tutorias.ui.teacher_registry.TeachersRegistryFragment"
+        android:name="com.example.upicca_tutorias.ui.home.TeachersRegistryFragment"
         android:label="teachers_registry_fragment"
         tools:layout="@layout/teachers_registry_fragment" />
 </navigation>
