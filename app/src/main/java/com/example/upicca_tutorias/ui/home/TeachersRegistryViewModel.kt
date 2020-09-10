@@ -10,19 +10,13 @@ class TeachersRegistryViewModel : ViewModel() {
 
     private var _teacherRegistries = MutableLiveData<List<TeacherRegistry>>()
 
-
-    val teacherRegistries: LiveData<List<TeacherRegistry>>
-        get() = _teacherRegistries
-
+    val teacherRegistries: LiveData<List<TeacherRegistry>> get() = _teacherRegistries
 
     fun fetchTeachersRegistries() {
         //temporal Code
-       var list: List<TeacherRegistry> = listOf(TeacherRegistry("Juan Domm","Programacion",""),
+       val list: List<TeacherRegistry> = listOf(TeacherRegistry("Juan Domm","Programacion",""),
            TeacherRegistry("Daniel Mattrs","Matematicas avanzadas",""),
            TeacherRegistry("Luis Daniel Martinez","Filosfia y letras",""))
-
         _teacherRegistries.postValue(list)
     }
-
-
 }

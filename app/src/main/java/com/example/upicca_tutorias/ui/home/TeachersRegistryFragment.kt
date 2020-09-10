@@ -26,7 +26,6 @@ class TeachersRegistryFragment : BaseFragment() {
         }
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         attachObservers()
