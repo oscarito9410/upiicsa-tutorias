@@ -43,8 +43,7 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
             notifyDataSetChanged()
         }
     }
-
-
+    
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(teacherRegistries[position])
     }

@@ -26,7 +26,6 @@ class RegistryStudentFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         attachObservers()
         viewModel = ViewModelProviders.of(this).get(RegistryStudentViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
