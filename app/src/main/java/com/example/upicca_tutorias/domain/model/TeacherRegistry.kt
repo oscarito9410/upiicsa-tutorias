@@ -6,5 +6,4 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class TeacherRegistry(val fullName: String,
                            val matter: String,
-                           val posterPath: String
-                           ) : Parcelable
+                           val posterPath: String) : Parcelable

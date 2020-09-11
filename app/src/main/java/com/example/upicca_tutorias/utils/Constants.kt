@@ -1,5 +1,5 @@
 package com.example.upicca_tutorias.utils
 
 object Constants {
-    const val URL_BASE = "https://api.themoviedb.org/3/movie/"
+    const val BASE_URL = "http://sosmex9410-001-site2.etempurl.com/api/upiicsa/";
 }

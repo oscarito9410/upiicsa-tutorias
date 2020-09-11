@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="careers">
+        <item>Ciencias Informatica</item>
+        <item>Ingenieria Informatica</item>
+        <item>Ingenieria en Transporte</item>
+        <item>Administración Industrial</item>
+        <item>Ingenieria industrial</item>
+    </string-array>
+
+    <string-array name="academic_situtation">
+        <item>Regular</item>
+        <item>Irregular</item>
+    </string-array>
+
+    <string-array name="turns">
+        <item>Matutino</item>
+        <item>Vespertino</item>
+        <item>Mixto</item>
+    </string-array>
+
+</resources>

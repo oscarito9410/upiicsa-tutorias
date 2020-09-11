@@ -60,11 +60,10 @@ dependencies {
     implementation dependencies.retrofitAdapterRxJava
     implementation dependencies.okhttp
     implementation dependencies.okhttpLogging
+    implementation dependencies.kotlinCoroutines
 
     implementation dependencies.stetho
     implementation dependencies.stethoOkhttp
     implementation dependencies.stethoOkhttp
-
-
 
 }

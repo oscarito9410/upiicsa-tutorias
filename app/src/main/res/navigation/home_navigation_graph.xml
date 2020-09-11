@@ -8,31 +8,47 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.upicca_tutorias.ui.login.LoginFragment"
+        android:name="com.example.upicca_tutorias.ui.signin.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_loginFragment_to_registryStudentFragment"
-            app:destination="@id/registryStudentFragment" />
+            app:destination="@id/registryStudentFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_loginFragment_to_teachersRegistryFragment"
-            app:destination="@id/teachersRegistryFragment" />
+            app:destination="@id/teachersRegistryFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/registryStudentFragment"
-        android:name="com.example.upicca_tutorias.ui.student_registry.RegistryStudentFragment"
+        android:name="com.example.upicca_tutorias.ui.signin.signup.RegistryStudentFragment"
         android:label="registry_student_fragment"
-        tools:layout="@layout/registry_student_fragment" >
+        tools:layout="@layout/registry_student_fragment">
         <action
             android:id="@+id/action_registryStudentFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_registryStudentFragment_to_teachersRegistryFragment"
-            app:destination="@id/teachersRegistryFragment" />
+            app:destination="@id/teachersRegistryFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/teachersRegistryFragment"
-        android:name="com.example.upicca_tutorias.ui.teacher_registry.TeachersRegistryFragment"
+        android:name="com.example.upicca_tutorias.ui.home.TeachersRegistryFragment"
         android:label="teachers_registry_fragment"
         tools:layout="@layout/teachers_registry_fragment" />
 </navigation>

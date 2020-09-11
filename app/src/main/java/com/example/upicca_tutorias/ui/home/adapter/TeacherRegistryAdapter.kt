@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui.teacher_registry.adapter
+package com.example.upicca_tutorias.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +31,6 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
         this.itemClickListener = listener
     }
 
-
     fun addNewTeachers(newMovies: List<TeacherRegistry>) {
         teacherRegistries.addAll(newMovies)
         notifyDataSetChanged()
@@ -44,7 +43,6 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
             notifyDataSetChanged()
         }
     }
-
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(teacherRegistries[position])

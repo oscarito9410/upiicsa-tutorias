@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.upicca_tutorias.ui.teacher_registry.adapter.TeacherRegistryAdapter
+import com.example.upicca_tutorias.ui.home.adapter.TeacherRegistryAdapter
 
 abstract class BaseFragment : Fragment() {
     //Methods will be used for each fragment
@@ -27,6 +27,4 @@ abstract class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initView()
     }
-
-
 }

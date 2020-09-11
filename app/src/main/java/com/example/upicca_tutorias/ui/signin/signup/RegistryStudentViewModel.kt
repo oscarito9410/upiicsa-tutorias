@@ -1,4 +1,4 @@
-package com.example.upicca_tutorias.ui.student_registry
+package com.example.upicca_tutorias.ui.signin.signup
 
 import androidx.lifecycle.ViewModel
 
