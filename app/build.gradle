@@ -48,6 +48,22 @@ dependencies {
     implementation dependencies.navigationFragment
     implementation dependencies.navigationUi
 
+    implementation dependencies.glide
+    annotationProcessor dependencies.glideAnnotation
 
+    implementation dependencies.koin
+    implementation dependencies.koinViewModel
+
+    implementation dependencies.moshi
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverterMoshi
+    implementation dependencies.retrofitAdapterRxJava
+    implementation dependencies.okhttp
+    implementation dependencies.okhttpLogging
+    implementation dependencies.kotlinCoroutines
+
+    implementation dependencies.stetho
+    implementation dependencies.stethoOkhttp
+    implementation dependencies.stethoOkhttp
 
 }

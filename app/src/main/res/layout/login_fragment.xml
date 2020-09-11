@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_login_background"
-    tools:context=".ui.login.LoginFragment">
+    android:background="@drawable/back_repeat"
+    tools:context=".ui.signin.login.LoginFragment">
 
 
     <ImageView
@@ -32,31 +32,32 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_icon_login_upiicsa" />
 
     <EditText
-        android:id="@+id/et_login_username"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:id="@+id/etLoginUserName"
+        style="@style/etRegistryTheme"
         android:background="@color/colorGrayEditTexts"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"
+        android:inputType="numberSigned"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_tittle" />
 
 
-
-
     <EditText
-        android:id="@+id/et_login_pass"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:id="@+id/etLoginPass"
+        style="@style/etRegistryTheme"
         android:layout_marginTop="20dp"
+        android:imeOptions="flagNoFullscreen"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"
         android:background="@color/colorGrayEditTexts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_login_username" />
+        app:layout_constraintTop_toBottomOf="@+id/etLoginUserName" />
 
 
     <TextView
@@ -67,9 +68,9 @@
         android:text="@string/text_login_new_registry"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/et_login_pass"
-        app:layout_constraintStart_toStartOf="@+id/et_login_pass"
-        app:layout_constraintTop_toBottomOf="@+id/et_login_pass" />
+        app:layout_constraintEnd_toEndOf="@+id/etLoginPass"
+        app:layout_constraintStart_toStartOf="@+id/etLoginPass"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPass" />
 
 
     <Button
@@ -81,9 +82,10 @@
         android:layout_marginStart="50dp"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:background="@drawable/shape_button_green"
+        android:background="@drawable/selector_button_login"
         android:textColor="@android:color/white"
         android:layout_marginTop="40dp"
+        android:enabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_login_new_registry" />
