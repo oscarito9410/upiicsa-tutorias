@@ -5,7 +5,7 @@
     <string name="text_login_tittle">BIENVENIDO</string>
     <string name="text_login_new_registry">Registrar nuevo usuario</string>
     <string name="text_login_btn">Iniciar sesión</string>
-    <string name="text_registry_full_name">Nombre completo del alumno</string>
+    <string name="text_registry_full_name">Nombres</string>
     <string name="text__registry_id_student">Boleta</string>
     <string name="text__registry_semester">Semestre</string>
     <string name="text_registry_academic_program">Programa academico</string>
@@ -15,9 +15,15 @@
     <string name="text_registry_turn">Turno</string>
     <string name="text_registry_academic_student">Alumno</string>
     <string name="text_registry_matters_owed">Materias que adeuda</string>
-    <string name="text_registry_footer">%s/2</string>
+    <string name="text_registry_footer">%s/3</string>
     <string name="text_teachers_tittle">Profesores</string>
     <string name="text_registry_scholarship">Becado</string>
     <string name="text_registry_student_scholarship_yes">Si</string>
     <string name="text_registry_student_scholarship_no">No</string>
+    <string name="text_registry_first_last_name">Apellido Paterno</string>
+    <string name="text_registry_second_last_name">Apellido Materno</string>
+    <string name="text_accept">Aceptar</string>
+    <string name="text_pass_no_equals">¡La contraseña no coincide con la confirmación!</string>
+    <string name="prefs_name_tutorias">PREFERENCE_NAME</string>
+
 </resources>

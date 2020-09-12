@@ -1,8 +1,12 @@
 package com.example.upicca_tutorias.di
 
+import android.content.Context
+import android.content.SharedPreferences
+import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.data.remote.UserEndpoints
-import com.example.upicca_tutorias.domain.usecase.LoginUseCase
-import com.example.upicca_tutorias.domain.usecase.LoginUseCaseImpl
+import com.example.upicca_tutorias.domain.usecase.*
+
+
 import com.example.upicca_tutorias.ui.signin.login.LoginViewModel
 import com.example.upicca_tutorias.ui.signin.signup.RegistryStudentViewModel
 import com.example.upicca_tutorias.ui.home.TeachersRegistryViewModel
@@ -10,6 +14,7 @@ import com.example.upicca_tutorias.utils.Constants
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -27,8 +32,12 @@ val ApplicationModule = module {
         LoginViewModel(get() as LoginUseCase)
     }
 
+    single<RegistryUseCase> {
+        RegistryUseCaseImpl(get() as UserEndpoints, get() as SharedPreferences)
+    }
+
     viewModel {
-        RegistryStudentViewModel()
+        RegistryStudentViewModel(get() as RegistryUseCase)
     }
 
     viewModel {
@@ -37,6 +46,14 @@ val ApplicationModule = module {
 }
 
 val NetworkModule = module {
+
+    single {
+        androidContext().getSharedPreferences(
+            androidContext().getString(R.string.prefs_name_tutorias),
+            Context.MODE_PRIVATE
+        )
+    }
+
 
     single {
         Retrofit.Builder()

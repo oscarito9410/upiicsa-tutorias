@@ -10,3 +10,9 @@ sealed class LoginViewState {
     object OnFailedSignIn : LoginViewState()
     object OnLoading : LoginViewState()
 }
+
+sealed class RegistryViewState {
+    object OnSuccessSignUp : RegistryViewState()
+    object OnFailedSignUp : RegistryViewState()
+    object OnLoading : RegistryViewState()
+}

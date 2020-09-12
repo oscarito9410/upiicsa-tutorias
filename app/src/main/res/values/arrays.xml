@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="careers">
-        <item>Ciencias Informatica</item>
-        <item>Ingenieria Informatica</item>
-        <item>Ingenieria en Transporte</item>
+        <item>Ciencias de la Informática</item>
+        <item>Ingeniería Informática</item>
+        <item>Ingeniería en Transporte</item>
         <item>Administración Industrial</item>
-        <item>Ingenieria industrial</item>
+        <item>Ingeniería industrial</item>
     </string-array>
 
     <string-array name="academic_situtation">
