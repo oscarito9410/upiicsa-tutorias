@@ -15,6 +15,10 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this@SplashActivity, SiginInActivity::class.java))
             finish()
-        }, 3000)
+        }, DELAY)
+    }
+
+    companion object {
+        private const val DELAY: Long = 3000
     }
 }
