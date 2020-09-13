@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context=".ui.SplashActivity">
-
-
+    
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -31,6 +30,5 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/book" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

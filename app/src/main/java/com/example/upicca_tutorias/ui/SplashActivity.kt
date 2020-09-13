@@ -9,6 +9,7 @@ import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.ui.signin.SiginInActivity
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
