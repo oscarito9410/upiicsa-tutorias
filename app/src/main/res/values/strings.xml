@@ -20,4 +20,5 @@
     <string name="text_registry_scholarship">Becado</string>
     <string name="text_registry_student_scholarship_yes">Si</string>
     <string name="text_registry_student_scholarship_no">No</string>
+    <string name="title_welcome">Bienvenido</string>
 </resources>
