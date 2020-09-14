@@ -50,5 +50,9 @@
         android:id="@+id/teachersRegistryFragment"
         android:name="com.example.upicca_tutorias.ui.home.TeachersRegistryFragment"
         android:label="teachers_registry_fragment"
-        tools:layout="@layout/teachers_registry_fragment" />
+        tools:layout="@layout/teachers_registry_fragment" >
+        <action
+            android:id="@+id/action_teachersRegistryFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

@@ -76,8 +76,6 @@ class RegistryStudentFragment : BaseFragment() {
         mNavController = Navigation.findNavController(view)
         tv_registry_footer.text = String.format(getString(R.string.text_registry_footer, "1"))
         iv_registry_footer.setOnClickListener {
-            mNavController.navigate(R.id.teachersRegistryFragment)
-
 
             if (!mIsNextScreen) {
 
