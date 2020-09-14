@@ -15,7 +15,7 @@
         android:id="@+id/iv_item_teacher_icon"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:src="@drawable/ic_item_teacher_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +23,13 @@
 
     <TextView
         android:id="@+id/tv_item_teacher_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Daniel Sosa"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/iv_item_teacher_add"
         app:layout_constraintStart_toEndOf="@+id/iv_item_teacher_icon"
         app:layout_constraintTop_toTopOf="@+id/iv_item_teacher_icon" />
 
@@ -38,12 +38,11 @@
         android:id="@+id/tv_item_teacher_matter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Programacion"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_item_teacher_icon"
-        app:layout_constraintStart_toEndOf="@+id/iv_item_teacher_icon" />
+        app:layout_constraintStart_toEndOf="@+id/iv_item_teacher_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_teacher_name" />
 
 
     <ImageView

@@ -1,9 +1,12 @@
 package com.example.upicca_tutorias.domain.model
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import com.squareup.moshi.Json
 
-@Parcelize
-data class TeacherRegistry(val fullName: String,
-                           val matter: String,
-                           val posterPath: String) : Parcelable
+
+data class TeacherRegistry(
+    @Json(name = "id") val id: Int?,
+    @Json(name = "nombre") val nombre: String?,
+    @Json(name = "horas") val horas: Int?,
+    @Json(name = "cat_tiempo") val cat_tiempo: String?
+)
+

@@ -7,33 +7,82 @@
     android:background="@drawable/back_repeat"
     tools:context=".ui.signin.signup.RegistryStudentFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cly_container_registry_step_1"
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="visible"
-        tools:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cly_container_registry_step_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+       >
+
         <TextView
-            android:id="@+id/tv_registry_full_name"
+            android:id="@+id/tv_registry_first_last_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/text_registry_full_name"
-            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_first_last_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_first_last_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_registry_full_name"
+            android:id="@+id/et_registry_first_last_name"
             style="@style/etRegistryTheme"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_registry_full_name" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_first_last_name" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_second_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_second_last_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_second_last_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_first_last_name" />
+
+        <EditText
+            android:id="@+id/et_registry_second_last_name"
+            style="@style/etRegistryTheme"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_second_last_name" />
+
+
+        <TextView
+            android:id="@+id/tv_registry_names"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_full_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_names"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_second_last_name" />
+
+        <EditText
+            android:id="@+id/et_registry_names"
+            style="@style/etRegistryTheme"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_names" />
 
 
         <TextView
@@ -42,8 +91,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/text__registry_id_student"
-            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
-            app:layout_constraintTop_toBottomOf="@+id/et_registry_full_name" />
+            app:layout_constraintStart_toStartOf="@+id/et_registry_id_student"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_names" />
 
         <EditText
             android:id="@+id/et_registry_id_student"
@@ -61,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/text__registry_semester"
-            app:layout_constraintStart_toStartOf="@+id/et_registry_full_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_semester"
             app:layout_constraintTop_toBottomOf="@+id/et_registry_id_student" />
 
         <EditText
@@ -123,13 +172,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_container_registry_step_2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:visibility="gone"
-        tools:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/tv_registry_footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:visibility="gone"
+        >
 
         <TextView
             android:id="@+id/tv_registry_mail"
@@ -177,7 +223,7 @@
             app:layout_constraintTop_toBottomOf="@+id/et_registry_phone" />
 
         <Spinner
-            android:id="@+id/et_registry_turn"
+            android:id="@+id/sp_registry_turn"
             style="@style/etRegistryTheme"
             android:entries="@array/turns"
             app:layout_constraintEnd_toEndOf="parent"
@@ -191,8 +237,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/text_registry_academic_student"
-            app:layout_constraintStart_toStartOf="@+id/et_registry_turn"
-            app:layout_constraintTop_toBottomOf="@+id/et_registry_turn" />
+            app:layout_constraintStart_toStartOf="@+id/sp_registry_turn"
+            app:layout_constraintTop_toBottomOf="@+id/sp_registry_turn" />
 
         <Spinner
             android:id="@+id/sp_registry_academic_student"
@@ -260,9 +306,64 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed" />
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cly_container_registry_step_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/tv_registry_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Contraseña"
+                    app:layout_constraintStart_toStartOf="@+id/et_registry_password"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_registry_password"
+                    style="@style/etRegistryTheme"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_registry_password" />
+
+
+                <TextView
+                    android:id="@+id/tv_registry_confirm_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Confirmar contraseña"
+                    app:layout_constraintStart_toStartOf="@+id/et_registry_password"
+                    app:layout_constraintTop_toBottomOf="@+id/et_registry_password" />
+
+                <EditText
+                    android:id="@+id/et_registry_confirm_password"
+                    style="@style/etRegistryTheme"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_registry_confirm_password" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 
     <TextView
         android:id="@+id/tv_registry_footer"

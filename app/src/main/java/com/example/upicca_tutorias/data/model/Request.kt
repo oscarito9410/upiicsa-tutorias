@@ -11,7 +11,14 @@ data class SignUpRequest(
     @Json(name = "boleta") val boleta: String?,
     @Json(name = "nombre") val nombre: String?,
     @Json(name = "password") val password: String?,
-    @Json(name = "ap_paterno") val paterno: String?,
-    @Json(name = "ap_materno") val materno: String?,
-    @Json(name = "id_carrera") val idCarrera: Int?
+    @Json(name = "ap_paterno") val ap_paterno: String?,
+    @Json(name = "ap_materno") val ap_materno: String?,
+    @Json(name = "carrera") val carrera: String?,
+    @Json(name = "materias_adeudas") val materias_adeudas: Int?,
+    @Json(name = "becado") val becado: Boolean?,
+    @Json(name = "promedio") val promedio: Float?,
+    @Json(name = "estatus") val estatus: String?,
+    @Json(name = "turno") val turno: String?
 )
+
+
