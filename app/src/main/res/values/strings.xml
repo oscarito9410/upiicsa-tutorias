@@ -28,4 +28,5 @@
 
     <string name="prefs_name_tutorias">PREFERENCE_NAME</string>
 
+    <string name="title_welcome">Bienvenido</string>
 </resources>

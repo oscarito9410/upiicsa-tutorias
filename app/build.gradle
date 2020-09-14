@@ -65,5 +65,5 @@ dependencies {
     implementation dependencies.stetho
     implementation dependencies.stethoOkhttp
     implementation dependencies.stethoOkhttp
-
+    implementation dependencies.lottie
 }
