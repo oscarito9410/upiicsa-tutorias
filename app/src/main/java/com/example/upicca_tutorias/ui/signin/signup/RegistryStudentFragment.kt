@@ -29,8 +29,6 @@ class RegistryStudentFragment : BaseFragment() {
 
 
     private val viewModel: RegistryStudentViewModel by viewModel()
-
-
     private var mIsNextScreen: Boolean = false
     private var mIsFinalScreen: Boolean = false
 
@@ -78,24 +76,47 @@ class RegistryStudentFragment : BaseFragment() {
         mNavController = Navigation.findNavController(view)
         tv_registry_footer.text = String.format(getString(R.string.text_registry_footer, "1"))
         iv_registry_footer.setOnClickListener {
+            mNavController.navigate(R.id.teachersRegistryFragment)
+
+
             if (!mIsNextScreen) {
-                mIsNextScreen = true
-                tv_registry_footer.text =
-                    String.format(getString(R.string.text_registry_footer, "2"))
-                cly_container_registry_step_1.visibility = View.GONE
-                cly_container_registry_step_2.visibility = View.VISIBLE
+
+                val isNotEmptyFirstScreen =
+                    !et_registry_first_last_name.text.isEmpty() && !et_registry_second_last_name.text.isEmpty() && !et_registry_names.text.isEmpty()
+                            && !et_registry_id_student.text.isEmpty() && !et_registry_semester.text.isEmpty() && !et_registry_init_average.text.isEmpty()
+
+                if (isNotEmptyFirstScreen) {
+                    mIsNextScreen = true
+                    tv_registry_footer.text =
+                        String.format(getString(R.string.text_registry_footer, "2"))
+                    cly_container_registry_step_1.visibility = View.GONE
+                    cly_container_registry_step_2.visibility = View.VISIBLE
+                } else {
+                    showDialog(getString(R.string.text_edits_no_empty))
+                }
+
+
             } else if (!mIsFinalScreen) {
-                mIsFinalScreen = true
-                tv_registry_footer.text =
-                    String.format(getString(R.string.text_registry_footer, "3"))
-                cly_container_registry_step_1.visibility = View.GONE
-                cly_container_registry_step_2.visibility = View.GONE
-                cly_container_registry_step_3.visibility = View.VISIBLE
+
+                val isNotEmptySecondScreen =
+                    !et_registry_mail.text.isEmpty() && !et_registry_phone.text.isEmpty() && !et_registry_matters_owed.text.isEmpty()
+
+                if (isNotEmptySecondScreen) {
+                    mIsFinalScreen = true
+                    tv_registry_footer.text =
+                        String.format(getString(R.string.text_registry_footer, "3"))
+                    cly_container_registry_step_1.visibility = View.GONE
+                    cly_container_registry_step_2.visibility = View.GONE
+                    cly_container_registry_step_3.visibility = View.VISIBLE
+                } else {
+                    showDialog(getString(R.string.text_edits_no_empty))
+                }
+
 
             } else {
 
                 val isCorrectPassword = et_registry_confirm_password.text.toString()
-                    .equals(et_registry_password.text.toString())
+                    .equals(et_registry_password.text.toString()) && !et_registry_confirm_password.text.isEmpty()&& !et_registry_password.text.isEmpty()
 
                 if (isCorrectPassword) {
                     val signUpRequest = SignUpRequest(
@@ -113,14 +134,8 @@ class RegistryStudentFragment : BaseFragment() {
                     )
                     viewModel.signUp(signUpRequest)
                 } else {
-                    viewModel.saveStringPreferences(et_registry_id_student.text.toString())
 
-                val sharedPreferences  = context?.getSharedPreferences(
-                    getString(R.string.prefs_name_tutorias),
-                    Context.MODE_PRIVATE
-                )
-                    showDialog(sharedPreferences?.getString("idValue","").toString())
-                    //showDialog(getString(R.string.text_pass_no_equals))
+                    showDialog(getString(R.string.text_pass_no_equals))
                 }
 
             }

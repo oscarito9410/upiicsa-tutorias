@@ -24,6 +24,8 @@
     <string name="text_registry_second_last_name">Apellido Materno</string>
     <string name="text_accept">Aceptar</string>
     <string name="text_pass_no_equals">¡La contraseña no coincide con la confirmación!</string>
+    <string name="text_edits_no_empty">Debe llenar todos los campos</string>
+
     <string name="prefs_name_tutorias">PREFERENCE_NAME</string>
 
 </resources>

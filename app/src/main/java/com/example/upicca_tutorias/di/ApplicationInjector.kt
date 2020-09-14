@@ -40,8 +40,12 @@ val ApplicationModule = module {
         RegistryStudentViewModel(get() as RegistryUseCase)
     }
 
+    single<TeachersRegistryUseCase> {
+        TeachersRegistryUseCaseImpl(get() as UserEndpoints)
+    }
+
     viewModel {
-        TeachersRegistryViewModel()
+        TeachersRegistryViewModel(get() as TeachersRegistryUseCase)
     }
 }
 

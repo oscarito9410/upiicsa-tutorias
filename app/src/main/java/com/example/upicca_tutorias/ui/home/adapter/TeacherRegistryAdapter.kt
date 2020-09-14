@@ -52,12 +52,12 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
         fun bindData(teacherRegistry: TeacherRegistry) {
             itemView.apply {
                 with(teacherRegistry) {
-                    tv_item_teacher_name.text = fullName
-                    tv_item_teacher_matter.text = matter
+                    tv_item_teacher_name.text = nombre
+                    tv_item_teacher_matter.text = cat_tiempo
 
-                    Glide.with(context).asDrawable().load(posterPath)
+                   /* Glide.with(context).asDrawable().load(posterPath)
                         .placeholder(R.drawable.ic_item_teacher_icon)
-                        .into(iv_item_teacher_icon)
+                        .into(iv_item_teacher_icon)*/
                 }
                 setOnClickListener { itemClickListener?.invoke(teacherRegistry) }
             }
