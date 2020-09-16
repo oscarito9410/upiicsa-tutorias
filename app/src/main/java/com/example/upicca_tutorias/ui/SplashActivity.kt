@@ -23,19 +23,23 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        sharedPreferences =   this.getSharedPreferences(getString(R.string.prefs_name_tutorias), Context.MODE_PRIVATE)
+        sharedPreferences =
+            this.getSharedPreferences(getString(R.string.prefs_name_tutorias), Context.MODE_PRIVATE)
 
-        if (sharedPreferences.getString("idValue", null) != null) {
-            Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
-                finish()
-            }, DELAY)
-        } else {
-            Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(this@SplashActivity, SiginInActivity::class.java))
-                finish()
-            }, DELAY)
-        }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(
+                Intent(
+                    this@SplashActivity,
+                    if (sharedPreferences.getString(
+                            "idValue",
+                            null
+                        ) != null
+                    )    HomeActivity::class.java else SiginInActivity::class.java
+                )
+            )
+            finish()
+        }, DELAY)
 
 
     }

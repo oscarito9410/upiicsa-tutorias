@@ -22,6 +22,7 @@ sealed class RegistryViewState {
 
 sealed class TeacherSearchViewState {
     data class OnSuccessTeacherSearch(val list: List<TeacherRegistry>):TeacherSearchViewState()
+    object OnSuccessAddTeachersRegistry:TeacherSearchViewState()
     object OnFailedTeacherSearch: TeacherSearchViewState()
     object OnLoading : TeacherSearchViewState()
 }

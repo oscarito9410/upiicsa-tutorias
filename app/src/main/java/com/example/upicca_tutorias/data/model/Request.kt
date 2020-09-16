@@ -21,4 +21,11 @@ data class SignUpRequest(
     @Json(name = "turno") val turno: String?
 )
 
+data class AddTeacherRequest(
+    @Json(name = "boleta") val boleta: String?,
+    @Json(name = "id_teacher") val id_teacher: String?
+)
+
+
+
 

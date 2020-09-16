@@ -42,7 +42,7 @@ val ApplicationModule = module {
     }
 
     single<TeachersRegistryUseCase> {
-        TeachersRegistryUseCaseImpl(get() as UserEndpoints)
+        TeachersRegistryUseCaseImpl(get() as UserEndpoints, get() as SharedPreferences)
     }
 
     //single { get<SplashActivity>() }

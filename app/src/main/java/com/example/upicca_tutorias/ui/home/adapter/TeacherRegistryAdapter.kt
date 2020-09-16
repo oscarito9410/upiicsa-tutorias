@@ -31,15 +31,15 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
         this.itemClickListener = listener
     }
 
-    fun addNewTeachers(newMovies: List<TeacherRegistry>) {
-        teacherRegistries.addAll(newMovies)
+    fun addNewTeachers(newTeachers: List<TeacherRegistry>) {
+        teacherRegistries.addAll(newTeachers)
         notifyDataSetChanged()
     }
 
-    fun updateTeachers(newMovies: List<TeacherRegistry>) {
+    fun updateTeachers(newTeachers: List<TeacherRegistry>) {
         teacherRegistries.apply {
             clear()
-            addAll(newMovies)
+            addAll(newTeachers)
             notifyDataSetChanged()
         }
     }

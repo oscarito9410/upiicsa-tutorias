@@ -1,5 +1,6 @@
 package com.example.upicca_tutorias.data.remote
 
+import com.example.upicca_tutorias.data.model.AddTeacherRequest
 import com.example.upicca_tutorias.data.model.SignInRequest
 import com.example.upicca_tutorias.data.model.SignUpRequest
 import com.example.upicca_tutorias.domain.model.TeacherRegistry
@@ -17,5 +18,8 @@ interface UserEndpoints {
 
     @GET("search")
     suspend fun getSearchTeacher(@Query("query") nombre_maestro: String):List<TeacherRegistry>
+
+    @POST("teacher/add")
+    suspend fun addTeacherRegistry(@Body addTeacherRequest: AddTeacherRequest)
 
 }

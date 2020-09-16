@@ -1,16 +1,17 @@
 package com.example.upicca_tutorias.ui.home
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.lifecycle.Observer
 import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.base.BaseFragment
+import com.example.upicca_tutorias.data.model.AddTeacherRequest
 import com.example.upicca_tutorias.domain.model.TeacherRegistry
 import com.example.upicca_tutorias.ui.model.TeacherSearchViewState
 import com.example.upicca_tutorias.utils.hideLoadingSpinner
 import com.example.upicca_tutorias.utils.showLoadingSpinner
-import com.example.upicca_tutorias.utils.toast
 import kotlinx.android.synthetic.main.teachers_registry_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -22,7 +23,7 @@ class TeachersRegistryFragment : BaseFragment() {
 
     override fun initView() {
         initAdapterManager()
-        et_teachers_search.addTextChangedListener(object : TextWatcher{
+        et_teachers_search.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
             }
 
@@ -30,7 +31,7 @@ class TeachersRegistryFragment : BaseFragment() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, count: Int) {
-                if(count>5){
+                if (count > 5) {
                     viewModel.getListTeachers(p0.toString())
                 }
             }
@@ -42,22 +43,16 @@ class TeachersRegistryFragment : BaseFragment() {
 
         viewModel.apply {
             teacherRegistriesViewState.observe(viewLifecycleOwner, Observer {
-                handleLoginViewState(it)
+                handleGetTachersState(it)
 
             })
         }
 
 
-        /* viewModel.apply {
-             fetchTeachersRegistries()
-             teacherRegistries.observe(viewLifecycleOwner, Observer {
-                 teachersAdapter.addNewTeachers(it)
-             })
-         }*/
     }
 
 
-    private fun handleLoginViewState(viewState: TeacherSearchViewState) {
+    private fun handleGetTachersState(viewState: TeacherSearchViewState) {
         when (viewState) {
 
             is TeacherSearchViewState.OnLoading -> {
@@ -65,17 +60,24 @@ class TeachersRegistryFragment : BaseFragment() {
             }
             is TeacherSearchViewState.OnFailedTeacherSearch -> {
                 requireActivity().hideLoadingSpinner()
-                requireContext().toast("an error here")
+                showDialog("Tu registro ha sido exitoso")
+                //requireContext().toast("an error here")
             }
             is TeacherSearchViewState.OnSuccessTeacherSearch -> {
                 requireActivity().hideLoadingSpinner()
                 showTeachersSearch(viewState.list)
             }
+            is TeacherSearchViewState.OnSuccessAddTeachersRegistry -> {
+                showDialog("Tu registro ha sido exitoso")
+
+            }
+
         }
     }
 
+
     private fun showTeachersSearch(teacherRegistries: List<TeacherRegistry>) {
-            teachersAdapter.updateTeachers(teacherRegistries)
+        teachersAdapter.updateTeachers(teacherRegistries)
 
     }
 
@@ -96,11 +98,24 @@ class TeachersRegistryFragment : BaseFragment() {
 
     private fun handleItemClickListener() {
         teachersAdapter.apply {
-            setItemClickListener { movie ->
-                movie.run {
+            setItemClickListener { teacherRegistry ->
+                teacherRegistry.run {
+                    val addTeacherRequest = AddTeacherRequest(
+                        teacherRegistry.nombre,
+                        viewModel.getStringPreferences("idValue")
+                    )
+                    showDialog(
+                        "¿Estás seguro de asignar a este profesor como tu tutor?",
+                        DialogInterface.OnClickListener { dialogInterface, i ->
+                            viewModel.addTeacherRegistry(addTeacherRequest)
+                        },
+                        true
+                    )
                     notifyDataSetChanged()
                 }
             }
         }
     }
 }
+
+
