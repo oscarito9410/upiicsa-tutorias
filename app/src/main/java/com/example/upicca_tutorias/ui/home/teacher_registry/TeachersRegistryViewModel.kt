@@ -1,13 +1,11 @@
-package com.example.upicca_tutorias.ui.home
+package com.example.upicca_tutorias.ui.home.teacher_registry
 
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.upicca_tutorias.data.model.AddTeacherRequest
-import com.example.upicca_tutorias.domain.model.TeacherRegistry
 import com.example.upicca_tutorias.domain.usecase.TeachersRegistryUseCase
-import com.example.upicca_tutorias.ui.model.LoginViewState
 import com.example.upicca_tutorias.ui.model.TeacherSearchViewState
 import com.example.upicca_tutorias.utils.SingleLiveEvent
 import kotlinx.coroutines.launch

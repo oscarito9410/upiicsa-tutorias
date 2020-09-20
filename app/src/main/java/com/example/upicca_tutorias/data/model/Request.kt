@@ -15,6 +15,7 @@ data class SignUpRequest(
     @Json(name = "ap_materno") val ap_materno: String?,
     @Json(name = "carrera") val carrera: String?,
     @Json(name = "materias_adeudas") val materias_adeudas: Int?,
+    @Json(name = "materias_text") val materias_text: String?,
     @Json(name = "becado") val becado: Boolean?,
     @Json(name = "promedio") val promedio: Float?,
     @Json(name = "estatus") val estatus: String?,

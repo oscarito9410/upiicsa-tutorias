@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_repeat"
-    tools:context=".ui.home.TeachersRegistryFragment">
+    tools:context=".ui.home.teacher_registry.TeachersRegistryFragment">
 
     <TextView
         android:id="@+id/tv_teachers_tittle"

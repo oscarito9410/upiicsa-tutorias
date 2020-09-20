@@ -1,5 +1,7 @@
-package com.example.upicca_tutorias.ui.home
+package com.example.upicca_tutorias.ui.home.teacher_registry
 
+import android.animation.Animator
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
@@ -12,12 +14,16 @@ import com.example.upicca_tutorias.domain.model.TeacherRegistry
 import com.example.upicca_tutorias.ui.model.TeacherSearchViewState
 import com.example.upicca_tutorias.utils.hideLoadingSpinner
 import com.example.upicca_tutorias.utils.showLoadingSpinner
+import kotlinx.android.synthetic.main.lottie_success_custom_dialog.view.*
 import kotlinx.android.synthetic.main.teachers_registry_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class TeachersRegistryFragment : BaseFragment() {
 
     private val viewModel: TeachersRegistryViewModel by viewModel()
+
+   lateinit var teacherRegistryIndex: TeacherRegistry
+
 
     override fun getLayoutView(): Int = R.layout.teachers_registry_fragment
 
@@ -37,6 +43,9 @@ class TeachersRegistryFragment : BaseFragment() {
             }
 
         })
+
+
+
     }
 
     override fun attachObservers() {
@@ -60,7 +69,7 @@ class TeachersRegistryFragment : BaseFragment() {
             }
             is TeacherSearchViewState.OnFailedTeacherSearch -> {
                 requireActivity().hideLoadingSpinner()
-                showDialog("Tu registro ha sido exitoso")
+                showDialog(viewState.toString())
                 //requireContext().toast("an error here")
             }
             is TeacherSearchViewState.OnSuccessTeacherSearch -> {
@@ -68,8 +77,8 @@ class TeachersRegistryFragment : BaseFragment() {
                 showTeachersSearch(viewState.list)
             }
             is TeacherSearchViewState.OnSuccessAddTeachersRegistry -> {
-                showDialog("Tu registro ha sido exitoso")
-
+                requireActivity().hideLoadingSpinner()
+                initAnimationSuccess()
             }
 
         }
@@ -96,6 +105,34 @@ class TeachersRegistryFragment : BaseFragment() {
         }
     }
 
+
+    private fun initAnimationSuccess(){
+        teachersAdapter.deleteTeachers(teacherRegistryIndex)
+
+        val builder = AlertDialog.Builder(context,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen)
+        val customLayout = getLayoutInflater().inflate(R.layout.lottie_success_custom_dialog, null);
+        builder.setView(customLayout);
+        val dialog = builder.create()
+        dialog.show()
+        customLayout.lav_success_process.playAnimation()
+        customLayout.lav_success_process.addAnimatorListener(object : Animator.AnimatorListener{
+            override fun onAnimationRepeat(p0: Animator?) {
+            }
+            override fun onAnimationEnd(p0: Animator?) {
+                dialog.dismiss()
+            }
+            override fun onAnimationCancel(p0: Animator?) {
+            }
+            override fun onAnimationStart(p0: Animator?) {
+            }
+        })
+
+
+
+
+    }
+
+
     private fun handleItemClickListener() {
         teachersAdapter.apply {
             setItemClickListener { teacherRegistry ->
@@ -111,11 +148,17 @@ class TeachersRegistryFragment : BaseFragment() {
                         },
                         true
                     )
+                    teacherRegistryIndex = teacherRegistry
                     notifyDataSetChanged()
                 }
             }
         }
     }
+
+
+
+
+
 }
 
 

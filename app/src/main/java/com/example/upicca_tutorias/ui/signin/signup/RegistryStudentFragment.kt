@@ -15,6 +15,7 @@ import com.example.upicca_tutorias.data.model.SignUpRequest
 import com.example.upicca_tutorias.ui.home.HomeActivity
 import com.example.upicca_tutorias.ui.model.LoginViewState
 import com.example.upicca_tutorias.ui.model.RegistryViewState
+import com.example.upicca_tutorias.ui.signin.SiginInActivity
 import com.example.upicca_tutorias.ui.signin.login.LoginViewModel
 import com.example.upicca_tutorias.utils.hideLoadingSpinner
 import com.example.upicca_tutorias.utils.showLoadingSpinner
@@ -60,8 +61,12 @@ class RegistryStudentFragment : BaseFragment() {
             }
             is RegistryViewState.OnSuccessSignUp -> {
                 requireActivity().hideLoadingSpinner()
-                mNavController.navigate(R.id.teachersRegistryFragment)
+               // mNavController.navigate(R.id.teachersRegistryFragment)
+               // mNavController.navigate(R.id.action_loginFragment_to_teachersRegistryFragment)
                 viewModel.saveStringPreferences(et_registry_id_student.text.toString())
+                context!!.startActivity(Intent(context, HomeActivity::class.java))
+                activity!!.finish()
+
             }
         }
     }
@@ -125,6 +130,7 @@ class RegistryStudentFragment : BaseFragment() {
                         et_registry_second_last_name.text.toString(),
                         sp_registry_academic_program.selectedItem.toString(),
                         et_registry_matters_owed.text.toString().toInt(),
+                        et_registry_matters_owed_name.text.toString(),
                         if (rb_registry_student_scholarship_yes.isActivated) true else if (rb_registry_student_scholarship_no.isActivated) false else false,
                         et_registry_init_average.text.toString().toFloat(),
                         sp_registry_academic_student.selectedItem.toString(),

@@ -8,5 +8,6 @@ data class TeacherRegistry(
     @Json(name = "nombre") val nombre: String?,
     @Json(name = "horas") val horas: Int?,
     @Json(name = "cat_tiempo") val cat_tiempo: String?
+
 )
 

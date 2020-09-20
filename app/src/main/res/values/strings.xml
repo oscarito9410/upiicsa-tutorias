@@ -15,11 +15,13 @@
     <string name="text_registry_turn">Turno</string>
     <string name="text_registry_academic_student">Alumno</string>
     <string name="text_registry_matters_owed">Materias que adeuda</string>
+    <string name="text_registry_matters_owed_name">Nombre de las materias que adeuda</string>
     <string name="text_registry_footer">%s/3</string>
     <string name="text_teachers_tittle">Profesores</string>
     <string name="text_registry_scholarship">Becado</string>
     <string name="text_registry_student_scholarship_yes">Si</string>
     <string name="text_registry_student_scholarship_no">No</string>
+    <string name="text_registry_student_scholarship_asp">Aspirante</string>
     <string name="text_registry_first_last_name">Apellido Paterno</string>
     <string name="text_registry_second_last_name">Apellido Materno</string>
     <string name="text_accept">Aceptar</string>
@@ -30,4 +32,6 @@
     <string name="prefs_name_tutorias">PREFERENCE_NAME</string>
 
     <string name="title_welcome">Bienvenido</string>
+    <string name="tv_subtittle_success_animation">El registro fue exitoso</string>
+    <string name="text_profile_tittle">Perfil</string>
 </resources>

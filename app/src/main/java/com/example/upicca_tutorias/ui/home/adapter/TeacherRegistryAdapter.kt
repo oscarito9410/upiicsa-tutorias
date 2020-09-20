@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.upicca_tutorias.R
 import com.example.upicca_tutorias.domain.model.TeacherRegistry
+import kotlinx.android.synthetic.main.activity_sigin_in.*
 import kotlinx.android.synthetic.main.item_teacher_add.view.*
 
 class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherRegistry>) :
@@ -23,6 +24,8 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
                 parent, false
             )
         )
+
+
     }
 
     override fun getItemCount(): Int = teacherRegistries.size
@@ -33,6 +36,12 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
 
     fun addNewTeachers(newTeachers: List<TeacherRegistry>) {
         teacherRegistries.addAll(newTeachers)
+        notifyDataSetChanged()
+    }
+
+
+    fun deleteTeachers(teacherRegistry: TeacherRegistry) {
+        teacherRegistries.remove(teacherRegistry)
         notifyDataSetChanged()
     }
 
@@ -63,4 +72,7 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
             }
         }
     }
+
+
+
 }

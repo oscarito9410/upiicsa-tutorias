@@ -48,11 +48,12 @@
     </fragment>
     <fragment
         android:id="@+id/teachersRegistryFragment"
-        android:name="com.example.upicca_tutorias.ui.home.TeachersRegistryFragment"
+        android:name="com.example.upicca_tutorias.ui.home.teacher_registry.TeachersRegistryFragment"
         android:label="teachers_registry_fragment"
-        tools:layout="@layout/teachers_registry_fragment" >
-        <action
-            android:id="@+id/action_teachersRegistryFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/teachers_registry_fragment" />
+    <fragment
+        android:id="@+id/action_menu_profile"
+        android:name="com.example.upicca_tutorias.ui.home.teacher_registry.ProfileTeacherRegistryFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
 </navigation>

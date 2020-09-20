@@ -19,7 +19,10 @@ interface UserEndpoints {
     @GET("search")
     suspend fun getSearchTeacher(@Query("query") nombre_maestro: String):List<TeacherRegistry>
 
-    @POST("teacher/add")
+    @POST("add")
     suspend fun addTeacherRegistry(@Body addTeacherRequest: AddTeacherRequest)
+
+    @GET("tutor")
+    suspend fun getTutor(@Query("boleta") boleta: String):List<TeacherRegistry>
 
 }

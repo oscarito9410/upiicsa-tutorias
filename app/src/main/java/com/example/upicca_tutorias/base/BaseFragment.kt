@@ -10,14 +10,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.upicca_tutorias.R
+import com.example.upicca_tutorias.ui.home.HomeActivity
 import com.example.upicca_tutorias.ui.home.adapter.TeacherRegistryAdapter
+import com.example.upicca_tutorias.ui.signin.SiginInActivity
 
 abstract class BaseFragment : Fragment() {
     //Methods will be used for each fragment
     abstract fun getLayoutView(): Int
     abstract fun initView()
     abstract fun attachObservers()
-
 
 
     protected val teachersAdapter = TeacherRegistryAdapter(mutableListOf())
@@ -36,15 +37,29 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
+
+    }
+
+    protected fun showBottomView(){
+        (activity as HomeActivity).visibleBottomView()
+    }
+
+    protected fun dismissBottomView(){
+        (activity as HomeActivity).goneBottomView()
     }
 
     protected fun showDialog(message: String) {
-        val listener = DialogInterface.OnClickListener{dialogInterface, i ->  }
-        showDialog(message, listener, false )
+        val listener = DialogInterface.OnClickListener { dialogInterface, i -> }
+        showDialog(message, listener, false)
     }
 
 
-    protected fun showDialog(message: String, listener: DialogInterface.OnClickListener, isCompleteAlert:Boolean ) {
+    protected fun showDialog(
+        message: String,
+        listener: DialogInterface.OnClickListener,
+        isCompleteAlert: Boolean
+    ) {
 
         val builder = AlertDialog.Builder(context)
         with(builder)
@@ -53,18 +68,18 @@ abstract class BaseFragment : Fragment() {
             setMessage(message)
             if (isCompleteAlert) {
                 setPositiveButton(R.string.text_accept, listener)
-                setNegativeButton(R.string.text_cancel, { dialogInterface, i -> dialogInterface.dismiss() })
+                setNegativeButton(
+                    R.string.text_cancel,
+                    { dialogInterface, i -> dialogInterface.dismiss() })
 
             } else {
-                setNeutralButton(
-                    R.string.text_accept,
-                    { dialogInterface, i -> dialogInterface.dismiss() })
+                setNeutralButton(R.string.text_accept, { dialogInterface, i -> dialogInterface.dismiss() })
             }
             show()
         }
-
-
     }
+
+
 
 
 }
