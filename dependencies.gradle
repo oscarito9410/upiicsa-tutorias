@@ -28,10 +28,13 @@ ext {
             koinViewModel          : "org.koin:koin-android-viewmodel:2.0.0",
             koin                   : "org.koin:koin-android:$koinVersion",
 
+
             retrofit               : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitConverterGson  : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             retrofitAdapterRxJava  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
             retrofitConverterMoshi : "com.squareup.retrofit2:converter-moshi:2.3.0",
+
+            gson                   : 'com.google.code.gson:gson:2.8.6',
 
             moshi                  : "com.squareup.moshi:moshi:1.6.0",
             moshiKapt              : "com.squareup.moshi:moshi-kotlin-codegen:1.6.0",
