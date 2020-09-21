@@ -141,7 +141,7 @@ class TeachersRegistryFragment : BaseFragment() {
                         teacherRegistry.id
                     )
                     showDialog(
-                        "¿Estás seguro de asignar a este profesor como tu tutor?",
+                        getString(R.string.text_add_tutor_question),
                         DialogInterface.OnClickListener { dialogInterface, i ->
                             viewModel.addTeacherRegistry(addTeacherRequest)
                         },

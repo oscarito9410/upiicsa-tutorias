@@ -15,7 +15,7 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
 
     private var itemClickListener: ((TeacherRegistry) -> Unit?)? = null
 
-    private var isIconAdd:Boolean= false
+    private var isIconAdd: Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,8 +24,6 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
                 parent, false
             )
         )
-
-
     }
 
     override fun getItemCount(): Int = teacherRegistries.size
@@ -67,18 +65,14 @@ class TeacherRegistryAdapter(private val teacherRegistries: MutableList<TeacherR
                 with(teacherRegistry) {
                     tv_item_teacher_name.text = nombre
                     tv_item_teacher_matter.text = cat_tiempo
-                    if(isIconAdd){
-                    iv_item_teacher_add.visibility = View.GONE
+                    if (isIconAdd) {
+                        iv_item_teacher_add.visibility = View.GONE
                     }
-                   /* Glide.with(context).asDrawable().load(posterPath)
-                        .placeholder(R.drawable.ic_item_teacher_icon)
-                        .into(iv_item_teacher_icon)*/
                 }
                 setOnClickListener { itemClickListener?.invoke(teacherRegistry) }
             }
         }
     }
-
 
 
 }

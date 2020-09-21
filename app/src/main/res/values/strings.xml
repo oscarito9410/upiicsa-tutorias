@@ -34,4 +34,5 @@
     <string name="title_welcome">Bienvenido</string>
     <string name="tv_subtittle_success_animation">El registro fue exitoso</string>
     <string name="text_profile_tittle">Perfil</string>
+    <string name="text_add_tutor_question">¿Estás seguro de asignar a este profesor como tu tutor?</string>
 </resources>

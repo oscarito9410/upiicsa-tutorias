@@ -18,8 +18,7 @@ class ProfileTeacherRegistryFragment : BaseFragment() {
 
 
     override fun initView() {
-            initAdapterManager()
-
+        initAdapterManager()
         viewModel.apply {
             teacherRegistriesViewState.observe(viewLifecycleOwner, Observer {
                 handleGetTutorsState(it)
@@ -28,15 +27,12 @@ class ProfileTeacherRegistryFragment : BaseFragment() {
     }
 
     override fun attachObservers() {
-
     }
 
     private fun initAdapterManager() {
         rv_profile_teachers?.apply {
             layoutManager = teachersLayoutManager
-            //addItemDecoration(SpacesItemDecoration(SPACE_ITEM_DECORATION))
             adapter = teachersAdapter
-
         }
 
         teachersAdapter.apply { notifyDataSetChanged() }
@@ -52,8 +48,6 @@ class ProfileTeacherRegistryFragment : BaseFragment() {
     }
 
 
-
-
     private fun handleGetTutorsState(viewState: TeacherSearchViewState) {
         when (viewState) {
 
@@ -63,7 +57,6 @@ class ProfileTeacherRegistryFragment : BaseFragment() {
             is TeacherSearchViewState.OnFailedTeacherSearch -> {
                 requireActivity().hideLoadingSpinner()
                 showDialog(viewState.toString())
-                //requireContext().toast("an error here")
             }
             is TeacherSearchViewState.OnSuccessTeacherSearch -> {
                 requireActivity().hideLoadingSpinner()
@@ -72,7 +65,6 @@ class ProfileTeacherRegistryFragment : BaseFragment() {
 
         }
     }
-
 
 
 }

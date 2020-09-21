@@ -27,7 +27,3 @@ data class AddTeacherRequest(
     @Json(name = "boleta") val boleta: String?,
     @Json(name = "id_teacher") val id_teacher: String?
 )
-
-
-
-

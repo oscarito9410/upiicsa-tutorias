@@ -15,21 +15,16 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-    /*    if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, TeachersRegistryFragment()).commit();
-        }*/
-
         setUpNavigation()
 
     }
 
 
-    fun visibleBottomView(){
+    fun visibleBottomView() {
         bottomNavigationView.visibility = View.VISIBLE
     }
 
-    fun goneBottomView(){
+    fun goneBottomView() {
         bottomNavigationView.visibility = View.GONE
     }
 

@@ -35,15 +35,13 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-
-
     }
 
-    protected fun showBottomView(){
+    protected fun showBottomView() {
         (activity as HomeActivity).visibleBottomView()
     }
 
-    protected fun dismissBottomView(){
+    protected fun dismissBottomView() {
         (activity as HomeActivity).goneBottomView()
     }
 
@@ -71,13 +69,12 @@ abstract class BaseFragment : Fragment() {
                     { dialogInterface, i -> dialogInterface.dismiss() })
 
             } else {
-                setNeutralButton(R.string.text_accept, { dialogInterface, i -> dialogInterface.dismiss() })
+                setNeutralButton(
+                    R.string.text_accept,
+                    { dialogInterface, i -> dialogInterface.dismiss() })
             }
             show()
         }
     }
-
-
-
 
 }

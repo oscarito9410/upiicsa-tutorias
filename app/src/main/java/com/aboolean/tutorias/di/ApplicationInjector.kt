@@ -41,9 +41,7 @@ val ApplicationModule = module {
     single<TeachersRegistryUseCase> {
         TeachersRegistryUseCaseImpl(get() as UserEndpoints, get() as SharedPreferences)
     }
-
-    //single { get<SplashActivity>() }
-
+    
     viewModel {
         TeachersRegistryViewModel(
             get() as TeachersRegistryUseCase
