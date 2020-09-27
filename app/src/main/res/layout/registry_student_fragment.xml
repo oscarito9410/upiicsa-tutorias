@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="30dp"
         android:visibility="visible"
-        tools:visibility="visible"
+        tools:visibility="gone"
        >
 
         <TextView
@@ -174,7 +174,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        tools:visibility="gone"
+        tools:visibility="visible"
         >
 
         <TextView
@@ -211,7 +211,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_phone" />
-
 
         <TextView
             android:id="@+id/tv_registry_turn"
@@ -267,9 +266,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_registry_scholarship"
-            app:layout_constraintEnd_toEndOf="@+id/sp_registry_academic_student"
-            app:layout_constraintTop_toTopOf="@+id/tv_registry_scholarship">
+            app:layout_constraintStart_toStartOf="@+id/tv_registry_scholarship"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_scholarship">
 
             <RadioButton
                 android:id="@+id/rb_registry_student_scholarship_yes"
@@ -285,6 +283,14 @@
                 android:padding="10dp"
                 android:text="@string/text_registry_student_scholarship_no" />
 
+
+            <RadioButton
+                android:id="@+id/rb_registry_student_scholarship_asp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/text_registry_student_scholarship_asp" />
+
         </RadioGroup>
 
 
@@ -295,7 +301,7 @@
             android:layout_marginTop="30dp"
             android:text="@string/text_registry_matters_owed"
             app:layout_constraintStart_toStartOf="@+id/tv_registry_scholarship"
-            app:layout_constraintTop_toBottomOf="@+id/tv_registry_scholarship" />
+            app:layout_constraintTop_toBottomOf="@+id/rg_registry_student_scholarship" />
 
         <EditText
             android:id="@+id/et_registry_matters_owed"
@@ -305,6 +311,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed" />
+
+
+
+        <TextView
+            android:id="@+id/tv_registry_matters_owed_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_registry_matters_owed_name"
+            app:layout_constraintStart_toStartOf="@+id/et_registry_matters_owed"
+            app:layout_constraintTop_toBottomOf="@+id/et_registry_matters_owed" />
+
+
+        <com.aboolean.tutorias.ui.signin.signup.matters_completion.MattersCompletionView
+            android:id="@+id/mcv_matters_owned_name"
+            style="@style/etRegistryTheme"
+            android:layout_height="100dp"
+            android:isScrollContainer="true"
+            android:lineHeight="12dp"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed_name" />
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/et_registry_matters_owed_name"
+            style="@style/etRegistryTheme"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:maxLines="8"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed_name" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

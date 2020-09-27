@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.upicca_tutorias"
+        applicationId "com.aboolean.upicca_tutorias"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
@@ -66,4 +66,6 @@ dependencies {
     implementation dependencies.stethoOkhttp
     implementation dependencies.stethoOkhttp
     implementation dependencies.lottie
+    implementation dependencies.gson
+    implementation dependencies.tokenautocomplete
 }

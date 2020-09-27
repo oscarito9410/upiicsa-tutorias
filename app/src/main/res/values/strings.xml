@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Upicca-tutorias</string>
+    <string name="app_name">Upiicsa tutorias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_login_tittle">BIENVENIDO</string>
@@ -15,18 +15,24 @@
     <string name="text_registry_turn">Turno</string>
     <string name="text_registry_academic_student">Alumno</string>
     <string name="text_registry_matters_owed">Materias que adeuda</string>
+    <string name="text_registry_matters_owed_name">Nombre de las materias que adeuda</string>
     <string name="text_registry_footer">%s/3</string>
     <string name="text_teachers_tittle">Profesores</string>
     <string name="text_registry_scholarship">Becado</string>
     <string name="text_registry_student_scholarship_yes">Si</string>
     <string name="text_registry_student_scholarship_no">No</string>
+    <string name="text_registry_student_scholarship_asp">Aspirante</string>
     <string name="text_registry_first_last_name">Apellido Paterno</string>
     <string name="text_registry_second_last_name">Apellido Materno</string>
     <string name="text_accept">Aceptar</string>
+    <string name="text_cancel">Cancelar</string>
     <string name="text_pass_no_equals">¡La contraseña no coincide con la confirmación!</string>
     <string name="text_edits_no_empty">Debe llenar todos los campos</string>
 
     <string name="prefs_name_tutorias">PREFERENCE_NAME</string>
 
     <string name="title_welcome">Bienvenido</string>
+    <string name="tv_subtittle_success_animation">El registro fue exitoso</string>
+    <string name="text_profile_tittle">Perfil</string>
+    <string name="text_add_tutor_question">¿Estás seguro de asignar a este profesor como tu tutor?</string>
 </resources>

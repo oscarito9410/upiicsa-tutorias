@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.upicca_tutorias.ui.signin.login.LoginFragment"
+        android:name="com.aboolean.tutorias.ui.signin.login.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/registryStudentFragment"
-        android:name="com.example.upicca_tutorias.ui.signin.signup.RegistryStudentFragment"
+        android:name="com.aboolean.tutorias.ui.signin.signup.RegistryStudentFragment"
         android:label="registry_student_fragment"
         tools:layout="@layout/registry_student_fragment">
         <action
@@ -48,11 +48,12 @@
     </fragment>
     <fragment
         android:id="@+id/teachersRegistryFragment"
-        android:name="com.example.upicca_tutorias.ui.home.TeachersRegistryFragment"
+        android:name="com.aboolean.tutorias.ui.home.teacher_registry.TeachersRegistryFragment"
         android:label="teachers_registry_fragment"
-        tools:layout="@layout/teachers_registry_fragment" >
-        <action
-            android:id="@+id/action_teachersRegistryFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/teachers_registry_fragment" />
+    <fragment
+        android:id="@+id/action_menu_profile"
+        android:name="com.aboolean.tutorias.ui.home.teacher_registry.ProfileTeacherRegistryFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
 </navigation>
