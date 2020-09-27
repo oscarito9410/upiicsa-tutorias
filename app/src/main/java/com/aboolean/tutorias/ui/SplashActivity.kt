@@ -26,16 +26,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(
-                Intent(
-                    this@SplashActivity,
-                    if (sharedPreferences.getString(
-                            "idValue",
-                            null
-                        ) != null
-                    )    HomeActivity::class.java else SiginInActivity::class.java
-                )
-            )
+            startActivity(Intent(this@SplashActivity, if (sharedPreferences.getString("idValue", null) != null) HomeActivity::class.java else SiginInActivity::class.java))
             finish()
         }, DELAY)
 

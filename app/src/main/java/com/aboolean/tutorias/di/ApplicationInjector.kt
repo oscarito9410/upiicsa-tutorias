@@ -41,7 +41,7 @@ val ApplicationModule = module {
     single<TeachersRegistryUseCase> {
         TeachersRegistryUseCaseImpl(get() as UserEndpoints, get() as SharedPreferences)
     }
-    
+
     viewModel {
         TeachersRegistryViewModel(
             get() as TeachersRegistryUseCase

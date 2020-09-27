@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aboolean.tutorias.R
 import com.aboolean.tutorias.ui.home.HomeActivity
 import com.aboolean.tutorias.ui.home.adapter.TeacherRegistryAdapter
+import com.aboolean.tutorias.utils.toast
 
 abstract class BaseFragment : Fragment() {
     //Methods will be used for each fragment
@@ -35,15 +37,9 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
     }
 
-    protected fun showBottomView() {
-        (activity as HomeActivity).visibleBottomView()
-    }
-
-    protected fun dismissBottomView() {
-        (activity as HomeActivity).goneBottomView()
-    }
 
     protected fun showDialog(message: String) {
         val listener = DialogInterface.OnClickListener { dialogInterface, i -> }
@@ -76,5 +72,7 @@ abstract class BaseFragment : Fragment() {
             show()
         }
     }
+
+
 
 }

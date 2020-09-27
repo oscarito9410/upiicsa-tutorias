@@ -212,7 +212,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_registry_phone" />
 
-
         <TextView
             android:id="@+id/tv_registry_turn"
             android:layout_width="wrap_content"
@@ -324,7 +323,20 @@
             app:layout_constraintStart_toStartOf="@+id/et_registry_matters_owed"
             app:layout_constraintTop_toBottomOf="@+id/et_registry_matters_owed" />
 
+
+        <com.aboolean.tutorias.ui.signin.signup.matters_completion.MattersCompletionView
+            android:id="@+id/mcv_matters_owned_name"
+            style="@style/etRegistryTheme"
+            android:layout_height="100dp"
+            android:isScrollContainer="true"
+            android:lineHeight="12dp"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_registry_matters_owed_name" />
+
         <EditText
+            android:visibility="gone"
             android:id="@+id/et_registry_matters_owed_name"
             style="@style/etRegistryTheme"
             android:inputType="textMultiLine"

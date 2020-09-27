@@ -47,5 +47,9 @@ ext {
             stetho                 : "com.facebook.stetho:stetho:$stethoVersion",
             stethoOkhttp           : "com.facebook.stetho:stetho-okhttp3:$stethoVersion",
             lottie                 : "com.airbnb.android:lottie:$lottieVersion",
+
+            tokenautocomplete      : "com.splitwise:tokenautocomplete:3.0.1@aar"
+
+
     ]
 }

@@ -71,4 +71,6 @@ class LoginFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         attachObservers()
     }
+
+
 }

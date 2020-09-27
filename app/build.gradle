@@ -67,4 +67,5 @@ dependencies {
     implementation dependencies.stethoOkhttp
     implementation dependencies.lottie
     implementation dependencies.gson
+    implementation dependencies.tokenautocomplete
 }
